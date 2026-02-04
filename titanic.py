@@ -8,13 +8,9 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 
 data = pd.read_csv("train.csv")
 
-print(data.info())
-
-#print(set(data["Embarked"].values))
-#print(set(data["Cabin"].values))
-
 def clean_data(data):
 
+    data = data.copy()
 
     # Drop columns that are not characteristic
     data.drop("PassengerId",axis = 1,inplace = True)
